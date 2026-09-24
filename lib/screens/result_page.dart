@@ -73,7 +73,7 @@ class ResultPage extends StatelessWidget {
             ),
             const Divider(),
             _metricTile(
-              "Mean Squared Error (MSE)",
+              "Mean Squared Error [MSE]",
               mse.toStringAsFixed(5),
               "Goal: → 0",
             ),
