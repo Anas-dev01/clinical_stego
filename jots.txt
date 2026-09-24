@@ -1,0 +1,58 @@
+##### PROGRESS ON 22-12-25 ######
+
+-------- TO GET STARTED WITH FLUTTER -------
+STEP 1:
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl git unzip xz-utils zip libglu1-mesa clang cmake ninja-build pkg-config libgtk-3-dev -y
+
+STEP 2:
+MANUALLY DOWNLOAD YOUR OS FLUTTER SDK FROM https://docs.flutter.dev/install/archive
+ext
+CREATE A FOLDER AND EXTRACT THE FILE
+mkdir ~/development
+cd ~/development
+tar xf ~/Downloads/flutter_linux_3.x.x-stable.tar.xz
+
+STEP 3:
+TELL KALI WHERE FLUTTER COMMAND IS LOCATED
+nano ~/.zshrc
+ADD THIS TO THE VERY BOTTOM(after the fi): export PATH="$PATH:$HOME/development/flutter/bin"
+ctrl + o and ctrl + x
+APPLY CHANGES: source ~/.zshrc
+
+STEP 4:
+flutter doctor
+
+STEP 5:
+MANUALLY DOWNLOAD ANDROID SDK CLI TOOLS
+ORGANIZE FOLDERS:
+mkdir -p ~/Android/Sdk/cmdline-tools
+unzip ~/Downloads/commandlinetools-linux-*.zip -d ~/Android/Sdk/cmdline-tools
+mv ~/Android/Sdk/cmdline-tools/cmdline-tools ~/Android/Sdk/cmdline-tools/latest
+Tell Flutter where the SDK is: flutter config --android-sdk ~/Android/Sdk
+RUN flutter doctor again, if issue comes up with android components:
+NAVIGATE TO BIN FOLDER: cd ~/Android/Sdk/cmdline-tools/latest/bin
+RUN: cd ~/Android/Sdk/cmdline-tools/latest/bin
+RUN:./sdkmanager "platforms;android-36" "build-tools;28.0.3" "platform-tools"
+
+STEP 6:
+flutter doctor --android-licenses
+flutter doctor
+
+----- END ------
+
+----- RUNNING CODE -----
+ADDED DEPENDENCIES TO pubspec.yaml: flutter pub add encrypt pointycastle image path_provider file_picker sqflite path
+ENABLE USB DEBUGGING ON DEVICE
+CONNECT CABLE
+CHECK IF IT'S PROPERLY CONNECTED USING: flutter devices
+RUN ANY OF THESE THREE:
+- flutter run
+- flutter run -v
+- flutter run --fast-start
+----- RUNNING THE CODE -----
+
+
+
+### PROGRESS ON 23-12-25 ###
+Pasted main.dart and security.dart
